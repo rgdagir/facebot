@@ -1,7 +1,6 @@
 # FaceBot v2.0
 # author: rgdagir (www.github.com/rgdagir)
 
-import os
 from selenium import webdriver
 from selenium.webdriver.common.keys import Keys
 from selenium.webdriver.common.alert import Alert
@@ -51,11 +50,11 @@ def send_notif_telegram(notifs, token):
 
     send_message = requests.post(post_url, data=json.dumps(data), headers=headers)
 
-if __name__ == "__main__":
-    driver = start_selenium()
-    email = os.environ["LIAME"]
-    password = os.environ["DROWSSAP"]
-    telegram_token = os.environ["TELEGRAM_TOKEN"]
-    login(driver, email, password)
-    notifs = fetch_notifs(driver)
-    send_notif_telegram(notifs, telegram_token)
+# if __name__ == "__main__":
+#     driver = start_selenium()
+#     email = os.environ["LIAME"]
+#     password = os.environ["DROWSSAP"]
+#     telegram_token = os.environ["TELEGRAM_TOKEN"]
+#     login(driver, email, password)
+#     notifs = fetch_notifs(driver)
+#     send_notif_telegram(notifs, telegram_token)
