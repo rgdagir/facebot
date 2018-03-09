@@ -1,3 +1,7 @@
+# Facebot v2.0 Loop Update Script
+# Author: Raul Dagir (github.com/rgdagir)
+
+#importing useful libraries
 import requests
 import os
 import facebook_bot as fbot
@@ -42,6 +46,7 @@ def run_bot():
     notifs = fbot.fetch_notifs(driver)
     fbot.send_notif_telegram(notifs, telegram_token)
 
+# main function
 if __name__ == "__main__":
     counter = 0
     last_id = 0
