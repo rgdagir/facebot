@@ -31,4 +31,4 @@ python facebook_bot.py
 
 ### Disclaimer
 
-This is an old project that I am now making public because I want people to use it. I used to run it locally on my machine every 8 hours, but I'll need to upgrade this simple script so that more people can use it. If you're interested in the project or in helping, hit me up!
+This is a project I used to run locally on my machine every 8 hours, but that I am now making public because I want people to use it. If you're interested in the project or in helping, hit me up!
