@@ -1,6 +1,6 @@
 # Facebot v2.0 Loop Update Script
 # Author: Raul Dagir (github.com/rgdagir)
-
+# This program is still being developed to support multiple calls coming from different Facebook users. If you have a suggestion, please open a pull request! :)
 #importing useful libraries
 import requests
 import os
@@ -32,7 +32,7 @@ def analyze_updates(updates, last_id):
                 chat_id = result["message"]["chat"]["id"]
                 text_content = result["message"]["text"]
                 print("update id: ", update_id, " chat id: ", chat_id, " text: ", text_content)
-                if (text_content == "notifications" and update_id > last_id):
+                if (text_content == "notifs" and update_id > last_id):
                     last_id = update_id
                     run_bot()
     return last_id
@@ -49,11 +49,12 @@ def run_bot():
 # main function
 if __name__ == "__main__":
     counter = 0
-    last_id = 0
+    recent_id = 0 
     telegram_token = os.environ["TELEGRAM_TOKEN"]
     while(True):
-        updates = fetch_updates(last_id, telegram_token)
-        last_id = analyze_updates(updates, last_id)
-        print(last_id)
+        updates = fetch_updates(recent_id, telegram_token)
+        recent_id = analyze_updates(updates, recent_id)
+        print(recent_id)
+        previous_id = recent_id
         counter += 1
         print ("times fetched: ", counter)
